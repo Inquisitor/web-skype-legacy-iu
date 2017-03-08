@@ -1,0 +1,78 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain("web.skype.com") {
+    /* Overall width */
+
+    :root .swx .conversationHistory .messageHistory {
+        max-width: none;
+    }
+    /* Their name moved to the left and fixed */
+
+    :root .swx .chat .conversation .their.message.showName .bubble .tile {
+        display: table;
+        position: absolute;
+        left: -4em;
+        width: 4em;
+        text-overflow: ellipsis;
+        top: 0.05em;
+    }
+    /* Move their message arrow up */
+
+    :root .swx .chat .conversation .message.first:not(.sticker):not(.media):not(.contact-info):not(.meCommandMessage) .bubble .arrow,
+    :root .swx .chat .conversation .message.showTimestamp.first:not(.sticker):not(.media):not(.contact-info):not(.meCommandMessage) .bubble .arrow {
+        top: 0.3em;
+    }
+    /* Remove gap above their message */
+
+    :root .swx .chat .conversation .their.message.first.showName {
+        margin-top: 0em;
+    }
+    /* Remove gap above my message */
+
+    :root .swx .chat .conversation .message.first,
+    :root .swx .chat .conversation .message.showTimestamp.first {
+        margin-top: 0;
+    }
+    /* Reduce spacing between messages */
+
+    :root .swx .chat .conversation .message .bubble .content {
+        padding: 0em 1.5em 0.5em 1em;
+        position: relative;
+    }
+    :root .swx .chat .conversation .message .bubble .content p {
+        top: 0;
+    }
+    :root .swx .chat .conversation .message {
+        margin-top: -0.6em;
+    }
+    /* Move my message to the left, align with their messages */
+
+    :root .swx .chat .conversation .me.message .bubble {
+        /*background-color: #e6f7fe;*/
+
+        margin-left: 3em;
+        margin-right: 5em;
+    }
+    /* Align my timestamp with their */
+
+    :root .swx .chat .conversation .me.message.showTimestamp .timestamp {
+        right: -5em;
+        text-align: left;
+    }
+    /* My nickname */
+
+    :root .swx .themeLight.chat .conversation .message.me.first .bubble:before {
+        content: 'Inquisitor';
+        position: absolute;
+        left: -6.7em;
+        top: 0.5em;
+        width: 4em;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 15px;
+        color: #8888FF;
+        text-align: left;
+    }
+    :root .swx .message.their .Avatar--absolute {
+        display: none !important;
+    }
+}
